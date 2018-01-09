@@ -1,9 +1,11 @@
 ```js
-const hooks = require('unci')
+const Hooks = require('unci')
+
+const hooks = new Hooks()
 
 const ctrl = {
-    async test(data){
-        await hooks.run('before', data)
+    async method(data){
+        data = await hooks.run('before', data)
         //main code
     }
 }
@@ -11,6 +13,6 @@ const ctrl = {
 hooks.add('before', data => Promise.resolve(data))
 hooks.add('before', data => console.log(data))
 
-ctrl.test({key: 'value'})
+ctrl.method({key: 'value'})
 
 ```

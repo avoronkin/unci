@@ -1,12 +1,12 @@
 {
   "name": "unci",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "hooks",
   "main": "src/hooks.js",
   "scripts": {
-    "test": "npm run lint && mocha --recursive",
-    "precommit": "npm test",
-    "prepush": "npm test",
+    "test": "mocha --recursive",
+    "precommit": "npm run lint && npm test",
+    "prepush": "npm run lint && npm test",
     "lint": "eslint ."
   },
   "repository": {
