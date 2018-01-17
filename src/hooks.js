@@ -6,19 +6,15 @@ module.exports = class Hooks {
         this[hooks] = {}
     }
 
-    get (event) {
+    _getHook (event) {
         this[hooks] = this[hooks] || {}
         this[hooks][event] = this[hooks][event] || new Layer()
-        const hook = this[hooks][event]
 
-        return hook.run.bind(hook)
+        return this[hooks][event]
     }
 
     add (event, fn) {
-        this[hooks] = this[hooks] || {}
-        this[hooks][event] = this[hooks][event] || new Layer()
-
-        const hook = this[hooks][event]
+        const hook = this._getHook(event)
 
         hook.use(fn)
 
@@ -26,9 +22,9 @@ module.exports = class Hooks {
     }
 
     async run (event, ...args) {
-        const hook = this.get(event)
+        const hook = this._getHook(event)
 
-        return hook.apply(hook, args)
+        return hook.run.apply(hook, args)
     }
 
 }

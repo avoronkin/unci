@@ -1,6 +1,6 @@
 {
   "name": "unci",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "hooks",
   "main": "src/hooks.js",
   "scripts": {
