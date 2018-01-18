@@ -179,6 +179,7 @@ describe('wrap', function () {
                 fn(new Error('some error'))
             }
 
+            //eslint-disable-next-line
             function next (err, a, b) {
                 assert(err)
                 assert(called)
@@ -192,6 +193,7 @@ describe('wrap', function () {
         it('should catch errors', function (done) {
             var called = 0
 
+            //eslint-disable-next-line
             function async (a, b, fn) {
                 called++
                 assert(this.ctx = 'ctx')
@@ -200,6 +202,7 @@ describe('wrap', function () {
                 throw new Error('some error')
             }
 
+            //eslint-disable-next-line
             function next (err, a, b) {
                 assert(err)
                 assert(called)
