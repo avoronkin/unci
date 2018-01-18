@@ -1,4 +1,4 @@
-const wrap = require('wrap-fn')
+const wrap = require('./wrap')//require('wrap-fn')
 
 module.exports = function (fns, ctx) {
     return function (...args) {
@@ -14,7 +14,7 @@ module.exports = function (fns, ctx) {
 
                 if (!fn) return resolve.call(ctx, args)
 
-                wrap(fn, next).apply(ctx, args)
+                wrap(fn).apply(ctx, args.concat(next))
             }
 
             next.apply(null, [null].concat(args))
