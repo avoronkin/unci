@@ -1,16 +1,16 @@
 language: node_js
 node_js:
-- '8'
+  - '8'
 cache:
   directories:
-  - node_modules
+    - node_modules
 install:
-- npm install nyc -g
+  - npm i
 before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- ./cc-test-reporter before-build
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
-- nyc --reporter=lcov npm run test
+  - nyc --reporter=lcov npm run test
 after_script:
-- ./cc-test-reporter after-build
+  - ./cc-test-reporter after-build
