@@ -5,6 +5,7 @@
     "main": "src/hooks.js",
     "scripts": {
         "test": "mocha --recursive",
+        "coverage": "nyc --reporter=html --reporter=text npm run test",
         "precommit": "npm run lint && npm test",
         "prepush": "npm run lint && npm test",
         "lint": "eslint ."
@@ -26,6 +27,7 @@
         "node": ">=8"
     },
     "dependencies": {
+        "nyc": "^14.1.1"
     },
     "devDependencies": {
         "husky": "^0.14.3",

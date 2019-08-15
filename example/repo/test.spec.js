@@ -1,6 +1,6 @@
 
 const assert = require('assert')
-const Hooks = require('../src/hooks')
+const Hooks = require('../../src/hooks')
 
 
 describe('examples', () => {
@@ -23,8 +23,8 @@ describe('examples', () => {
     })
 
     describe('mongoose-killer', () => {
-        const Repo = require('../example/repo/Repo')
-        const memoryStore = require('../example/repo/plugins/memoryStore')
+        const Repo = require('./Repo')
+        const memoryStore = require('./plugins/memoryStore')
         function timestamp (event, fieldName) {
             return async ctx => {
                 ctx.hooks.add(event, document => {

@@ -7,7 +7,7 @@ module.exports = class Hooks {
     }
 
     _getHook (event) {
-        this[hooks] = this[hooks] || {}
+        this[hooks] = this[hooks]
         this[hooks][event] = this[hooks][event] || new Layer()
 
         return this[hooks][event]

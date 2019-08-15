@@ -1,10 +1,8 @@
 const cascade = require('./cascade')
 
 module.exports = class Layer {
-    constructor (fn) {
+    constructor () {
         this.fns = []
-
-        if (fn) this.use(fn)
     }
 
     use (fn) {
