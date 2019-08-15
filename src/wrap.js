@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = function (fn) {
     return async function (...args) {
         const ctx = this

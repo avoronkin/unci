@@ -2,6 +2,7 @@
 /**
 * Module Dependencies
 */
+'use strict'
 
 var assert = require('assert')
 var wrap = require('../src/wrap')

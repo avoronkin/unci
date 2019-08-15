@@ -1,3 +1,5 @@
+'use strict'
+
 const cascade = require('./cascade')
 
 module.exports = class Layer {

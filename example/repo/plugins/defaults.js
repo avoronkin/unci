@@ -4,7 +4,7 @@ module.exports = (repo) => {
 
 function defaults (schema, obj) {
     Object.keys(schema).forEach(key => {
-        if (schema[key].hasOwnProperty('default') && obj[key] === undefined) {
+        if (Object.prototype.hasOwnProperty.call(schema[key], 'default') && obj[key] === undefined) {
             obj[key] = (typeof schema[key].default === 'function') ? schema[key].default() : schema[key].default
         }
     })

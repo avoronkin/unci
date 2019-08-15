@@ -1,3 +1,5 @@
+'use strict'
+
 const Layer = require('./layer')
 const hooks = Symbol('hooks')
 

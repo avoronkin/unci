@@ -1,3 +1,5 @@
+'use strict'
+
 const sinon = require('sinon')
 const assert = require('assert')
 const Hooks = require('../src/hooks')

@@ -1,3 +1,5 @@
+'use strict'
+
 const wrap = require('./wrap')
 
 module.exports = function (fns, ctx) {
