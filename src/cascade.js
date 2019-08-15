@@ -1,4 +1,4 @@
-const wrap = require('./wrap')//require('wrap-fn')
+const wrap = require('./wrap')
 
 module.exports = function (fns, ctx) {
     return function (...args) {
